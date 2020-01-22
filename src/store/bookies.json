@@ -1,0 +1,462 @@
+[{
+    "id": 1,
+    "name": "1xbet",
+    "slug": "1xbet",
+    "active": 1,
+	"order": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/1xbet",
+		"BG" : "https://oddspedia.com/go/1xbet/bulgaria"
+	}
+}, {
+    "id": 2,
+    "name": "Betano",
+    "slug": "betano",
+    "order": 2,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/betano",
+		"BG" : "https://oddspedia.com/go/betano/bulgaria"
+	}
+}, {
+    "id": 3,
+    "name": "Bet365",
+    "slug": "bet365",
+    "order": 3,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/bet365",
+		"DE" : "https://oddspedia.com/go/bet365/germany"
+	}
+}, {
+    "id": 4,
+    "name": "Betfair",
+    "slug": "betfair",
+    "order": 4,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/betfair",
+		"DE" : "https://oddspedia.com/go/betfair/germany",
+		"BG" : "https://oddspedia.com/gobetfair/bulgaria"
+	}
+}, {
+    "id": 5,
+    "name": "Betway",
+    "slug": "betway",
+    "order": 5,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/betway"
+	}
+}, {
+    "id": 6,
+    "name": "STSbet",
+    "slug": "stsbet",
+    "order": 6,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/stsbet"
+	}
+}, {
+    "id": 7,
+    "name": "ComeOn",
+    "slug": "comeon",
+    "order": 7,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/comeon"
+	}
+}, {
+    "id": 8,
+    "name": "Bwin",
+    "slug": "bwin",
+    "order": 8,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/bwin"
+	}
+}, {
+    "id": 9,
+    "name": "SBOBET",
+    "slug": "sbobet",
+    "order": 9,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/sbobet"
+	}
+}, {
+    "id": 12,
+    "name": "Vbet",
+    "slug": "vbet",
+    "order": 10,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/vbet"
+	}
+}, {
+    "id": 14,
+    "name": "Unibet",
+    "slug": "unibet",
+    "order": 11,
+    "active": 1
+}, {
+    "id": 15,
+    "name": "22bet",
+    "slug": "22bet",
+    "order": 12,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/22bet"
+	}
+}, {
+    "id": 17,
+    "name": "888sport",
+    "slug": "888sport",
+    "order": 13,
+    "active": 1,
+	"links" : {
+		"default" : "https://oddspedia.com/go/888sport"
+	}
+}, {
+    "id": 18,
+    "name": "Pinnacle",
+    "slug": "pinnacle",
+    "order": null,
+    "active": 0
+}, {
+    "id": 19,
+    "name": "Bethard",
+    "slug": "bethard",
+    "order": null,
+    "active": 0
+}, {
+    "id": 22,
+    "name": "10BET",
+    "slug": "10bet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 25,
+    "name": "Netbet",
+    "slug": "netbet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 26,
+    "name": "Marathonbet",
+    "slug": "marathonbet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 28,
+    "name": "Betvictor",
+    "slug": "betvictor",
+    "order": null,
+    "active": 0
+}, {
+    "id": 30,
+    "name": "William Hill",
+    "slug": "william-hill",
+    "order": null,
+    "active": 0
+}, {
+    "id": 31,
+    "name": "bet-at-home",
+    "slug": "bet-at-home",
+    "order": null,
+    "active": 0
+}, {
+    "id": 32,
+    "name": "Sportingbet",
+    "slug": "sportingbet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 33,
+    "name": "Dafabet",
+    "slug": "dafabet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 34,
+    "name": "Rivalo",
+    "slug": "rivalo",
+    "order": null,
+    "active": 0
+}, {
+    "id": 35,
+    "name": "LeoVegas",
+    "slug": "leovegas",
+    "order": null,
+    "active": 0
+}, {
+    "id": 36,
+    "name": "MyBet",
+    "slug": "mybet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 37,
+    "name": "Expekt",
+    "slug": "expekt",
+    "order": null,
+    "active": 0
+}, {
+    "id": 41,
+    "name": "12Bet",
+    "slug": "12bet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 42,
+    "name": "138.com",
+    "slug": "138-com",
+    "order": null,
+    "active": 0
+}, {
+    "id": 43,
+    "name": "188bet",
+    "slug": "188bet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 44,
+    "name": "Codere",
+    "slug": "codere",
+    "order": null,
+    "active": 0
+}, {
+    "id": 45,
+    "name": "18Bet",
+    "slug": "18bet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 46,
+    "name": "Bet3000",
+    "slug": "bet3000",
+    "order": null,
+    "active": 0
+}, {
+    "id": 47,
+    "name": "bet90",
+    "slug": "bet90",
+    "order": null,
+    "active": 0
+}, {
+    "id": 51,
+    "name": "Betclic",
+    "slug": "betclic",
+    "order": null,
+    "active": 0
+}, {
+    "id": 52,
+    "name": "Luckia",
+    "slug": "luckia",
+    "order": null,
+    "active": 0
+}, {
+    "id": 53,
+    "name": "betFIRST",
+    "slug": "betfirst",
+    "order": null,
+    "active": 0
+}, {
+    "id": 55,
+    "name": "Bets10",
+    "slug": "bets10",
+    "order": null,
+    "active": 0
+}, {
+    "id": 256003094,
+    "name": "Betsafe",
+    "slug": "betsafe",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1431455548,
+    "name": "Betser",
+    "slug": "betser",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1181670163,
+    "name": "Betsson",
+    "slug": "betsson",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1070956947,
+    "name": "Betworld",
+    "slug": "betworld",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1101042594,
+    "name": "Bodog",
+    "slug": "bodog",
+    "order": null,
+    "active": 0
+}, {
+    "id": 333313581,
+    "name": "Bovada",
+    "slug": "bovada",
+    "order": null,
+    "active": 0
+}, {
+    "id": 174957305,
+    "name": "Boylesports",
+    "slug": "boylesports",
+    "order": null,
+    "active": 0
+}, {
+    "id": 994103750,
+    "name": "Cashpoint",
+    "slug": "cashpoint",
+    "order": null,
+    "active": 0
+}, {
+    "id": 954477762,
+    "name": "CherryCasino",
+    "slug": "cherrycasino",
+    "order": null,
+    "active": 0
+}, {
+    "id": 2134497996,
+    "name": "EnergyBet",
+    "slug": "energybet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 349955414,
+    "name": "GG.bet",
+    "slug": "gg-bet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 395423455,
+    "name": "Guts",
+    "slug": "guts",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1624514251,
+    "name": "Intertops",
+    "slug": "intertops",
+    "order": null,
+    "active": 0
+}, {
+    "id": 2070296621,
+    "name": "Interwetten",
+    "slug": "interwetten",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1506723284,
+    "name": "Jetbull",
+    "slug": "jetbull",
+    "order": null,
+    "active": 0
+}, {
+    "id": 2079678262,
+    "name": "Ladbrokes",
+    "slug": "ladbrokes",
+    "order": null,
+    "active": 0
+}, {
+    "id": 640190622,
+    "name": "LSbet",
+    "slug": "lsbet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 442914709,
+    "name": "LVBet",
+    "slug": "lvbet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1953343464,
+    "name": "Melbet",
+    "slug": "melbet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 561097056,
+    "name": "Mobilebet",
+    "slug": "mobilebet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 265637369,
+    "name": "MrGreen",
+    "slug": "mrgreen",
+    "order": null,
+    "active": 0
+}, {
+    "id": 499538029,
+    "name": "NEO.bet",
+    "slug": "neo-bet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 2110165897,
+    "name": "Nordic",
+    "slug": "nordic",
+    "order": null,
+    "active": 0
+}, {
+    "id": 923735627,
+    "name": "PaddyPower",
+    "slug": "paddypower",
+    "order": null,
+    "active": 0
+}, {
+    "id": 959473043,
+    "name": "Sekabet",
+    "slug": "sekabet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 546151086,
+    "name": "Speedybet",
+    "slug": "speedybet",
+    "order": null,
+    "active": 0
+}, {
+    "id": 845677273,
+    "name": "Sunmaker",
+    "slug": "sunmaker",
+    "order": null,
+    "active": 0
+}, {
+    "id": 105957122,
+    "name": "Tipico",
+    "slug": "tipico",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1665987454,
+    "name": "Wetten.com",
+    "slug": "wetten-com",
+    "order": null,
+    "active": 0
+}, {
+    "id": 260262793,
+    "name": "Winner",
+    "slug": "winner",
+    "order": null,
+    "active": 0
+}, {
+    "id": 1225784647,
+    "name": "X-tip",
+    "slug": "x-tip",
+    "order": null,
+    "active": 0
+}, {
+    "id": 990014032,
+    "name": "YouWin",
+    "slug": "youwin",
+    "order": null,
+    "active": 0
+}]
