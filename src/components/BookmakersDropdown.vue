@@ -1,7 +1,7 @@
 <template>
-    <v-flex xs6 class="ma-2">
+    <v-container >
         <v-select
-            dense
+             
             :items="filteredBookmakers"
             :value="selectedItemTitle"
             outlined
@@ -19,7 +19,7 @@
                     dense
                     single-line
                     v-model="filter"
-                ><v-icon slot="append"  >mdi-magnify</v-icon></v-text-field>
+                ><v-icon slot="append" >mdi-magnify</v-icon></v-text-field>
                 </div>
                 <v-divider class="my-2"></v-divider>
             </template>
@@ -39,7 +39,7 @@
                 </v-layout>
             </template>
         </v-select>
-    </v-flex>
+    </v-container >
 </template>
 
 <script>
@@ -113,5 +113,7 @@ export default {
 </script>
 
 <style>
-
+.v-text-field--outlined, .v-text-field--solo {
+    border-radius: 2px !important;
+}
 </style>
