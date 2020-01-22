@@ -1,6 +1,15 @@
 <template>
   <v-app>
-
+    <v-btn 
+      class="ma-2 white--text"
+      color="light-blue darken-3"
+      width=150
+      tile
+      depressed 
+    >
+      Save
+    </v-btn>
+    
   </v-app>
 </template>
 
@@ -13,8 +22,10 @@ export default {
  
   },
 
-  data: () => ({
-    //
-  }),
+  data () {
+    return {
+ 
+    }
+  } 
 };
 </script>
