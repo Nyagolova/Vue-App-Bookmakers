@@ -1,5 +1,5 @@
 <template>
-    <v-container >
+    <v-container ma-0 pa-2>
         <v-select
              
             :items="filteredBookmakers"
@@ -115,5 +115,13 @@ export default {
 <style>
 .v-text-field--outlined, .v-text-field--solo {
     border-radius: 2px !important;
+}
+
+.v-input__slot {
+    margin-bottom: 0 !important;
+}
+
+.v-text-field.v-text-field--enclosed .v-text-field__details {
+    margin-bottom: 0 !important;
 }
 </style>
