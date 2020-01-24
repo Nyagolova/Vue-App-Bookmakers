@@ -21,17 +21,17 @@
         </v-row>
 
         <v-row no-gutters>
-            <v-col md="4"> </v-col>
-            <v-col md="1" >
+            <v-col md="3"> </v-col>
+            <v-col md="2" >
                 <v-card class="pa-2 pt-0 pb-0" elevation=0 color="#f1f3f9">
                     <v-select
                         background-color="white"
                         outlined 
                         dense 
-                        max-width="200"
+                        max-width="300"
                         hide-details 
                         :menu-props="{  offsetOverflow: true, offsetY: true, overflow: true, elevation: 1 }"
-                        :items="['a','b','v']" 
+                        :items="this.countriesNames" 
                     > 
                     </v-select>
                 </v-card>
@@ -57,6 +57,11 @@ export default {
         DomainTextfield,
         DomainTextfieldAdditional
     },
+    computed : {
+        countriesNames () {
+            return this.$store.state.countriesData.map(a => a.name);
+        }
+    }
 }
 </script>
 
