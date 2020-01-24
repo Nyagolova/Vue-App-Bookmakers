@@ -1,0 +1,44 @@
+<template>
+    <v-row no-gutters style="flex-wrap: nowrap;">
+        <v-col  
+            style="min-width: 100px; max-width: 100%;"
+            class="flex-grow-1 flex-shrink-0"
+        >
+            <v-text-field
+                background-color="#d8dbe5"
+                flat  
+                dense 
+                hide-details
+                filled
+                solo
+                class="ma-2 mr-0 mt-0"
+            >
+            </v-text-field>
+        </v-col>
+
+        <v-col class="flex-grow-0 flex-shrink-1">
+            <v-btn 
+                color="red darken-1"
+                fab 
+                dark 
+                tile 
+                small 
+                elevation=0 
+                class="ma-2 ml-0 mt-0" 
+            >
+                <v-icon dark>mdi-close</v-icon>
+            </v-btn>
+        </v-col>
+    </v-row>
+ 
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
