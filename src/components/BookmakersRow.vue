@@ -19,52 +19,60 @@
                 </v-card>
             </v-col>
         </v-row>
-
-        <!-- <v-row no-gutters>
-            <v-col md="3"> </v-col>
-            <v-col md="2" >
-                <v-card class="pa-2 pt-0 pb-0" elevation=0 color="#f1f3f9">
-                    <v-select
-                        background-color="white"
-                        outlined 
-                        dense 
-                        max-width="300"
-                        hide-details 
-                        :menu-props="{  offsetOverflow: true, offsetY: true, overflow: true, elevation: 1 }"
-                        :items="this.countriesNames" 
-                    > 
-                    </v-select>
-                </v-card>
-            </v-col>
-            
-            <v-col md="7" >
-                <v-card class="pa-2 pt-0 pb-0"  elevation=0 color="#f1f3f9">
-                    <domain-textfield-additional></domain-textfield-additional>
-                </v-card>
-            </v-col>
-        </v-row> -->
+ 
+        <template v-if="this.thisItemIsUpdated">
+            <domain-textfield-additional 
+             
+            >
+            <!--    v-for="items in count"  
+                :key="items" -->
+            </domain-textfield-additional>  
+        </template>
+ 
     </v-container>
 </template>
 
 <script>
 import BookmakersCheck from '@/components/BookmakersCheck.vue'
 import DomainTextfield from '@/components/DomainTextfield.vue'
-// import DomainTextfieldAdditional from '@/components/DomainTextfieldAdditional.vue'
+import DomainTextfieldAdditional from '@/components/DomainTextfieldAdditional.vue'
 
 export default {
+    data () {
+        return {
+           
+        }
+    },
     components: {
         BookmakersCheck,
         DomainTextfield,
-        // DomainTextfieldAdditional
+        DomainTextfieldAdditional
     },
     props: [
         'itemData',
         'rowIndex'
     ],
     computed : {
-        countriesNames () {
-            return this.$store.state.countriesData.map(a => a.name);
+        mydata () {
+            console.log('here 2')
+            return this.$store.state.additionalTextfields
+        },
+        count () {
+            return this.$store.state.count
+        },
+        id () {
+            return this.$store.state.selectedId
+        },
+        thisItemIsUpdated () {
+            if (this.$store.state.itemIsUpdated.includes(this.itemData.id)) {
+                return this.itemData.id
+            } else {
+                return ''
+            }
+            
         }
+    },
+    mounted () {
     }
 }
 </script>

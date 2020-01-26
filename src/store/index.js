@@ -10,7 +10,11 @@ export default new Vuex.Store({
     bookmakersData: bookies,
     countriesData: countries,
     bookmakersChecked: '',
-    selectedBookmakers: []
+    selectedBookmakers: [],
+    additionalTextfields: { id: 0, count: 0},
+    selectedId : 0,
+    count : 0,
+    itemIsUpdated: []
   },
   mutations: {
     CHECK_BOOKMAKERS (state, payload) {
@@ -18,6 +22,20 @@ export default new Vuex.Store({
     },
     FILTER_BOOKMAKERS(state, payload) {
       state.selectedBookmakers = payload
+    },
+    ADD_DOMAIN_DATA(state, payload) {
+      var id = payload.id;
+      var count = payload.count;
+      state.additionalTextfields[id] = count
+    },
+    SET_COUNT(state, payload) {
+      state.count = payload
+    },
+    SET_ID(state, payload) {
+      state.selectedId = payload
+    },
+    UPDATE_ITEM (state, payload) {
+      state.itemIsUpdated.push(payload)
     }
   },
   actions: {

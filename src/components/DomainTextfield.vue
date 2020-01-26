@@ -26,6 +26,7 @@
                 small 
                 elevation=0 
                 class="ma-2 ml-0" 
+                @click="addTextfieldd()"
             >
                 <v-icon dark>mdi-plus</v-icon>
             </v-btn>
@@ -35,11 +36,11 @@
 
 <script>
 export default {
-    // data : {
-    //     return () {
-             
-    //     }
-    // },
+    data () {
+        return  {
+            numberOfTextfields: 0
+        }
+    },
     props: ['itemData'],
     computed : {
         domainLink () {
@@ -52,6 +53,22 @@ export default {
             } else {
                 return ''
             }
+        }
+    },
+    methods: {
+        addTextfieldd() {
+            this.numberOfTextfields += 1
+            var textfieldsData = {
+                                    id: this.itemData.id,
+                                    count: this.numberOfTextfields
+                                }
+            this.$store.commit('SET_ID', this.itemData.id)    
+            this.$store.commit('SET_COUNT', this.numberOfTextfields)
+                                
+            // Vue.set(this.$store.state.additionalTextfields, 'id', '0');
+            // Vue.set(this.$store.state.additionalTextfields, 'count', '0');
+            this.$store.commit('ADD_DOMAIN_DATA', textfieldsData)
+            this.$store.commit('UPDATE_ITEM', this.itemData.id)
         }
     }
 }
