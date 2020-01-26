@@ -10,7 +10,7 @@
                 dense
                 hide-details 
                 outlined
-                :menu-props="{ lazy: true, offsetOverflow: true, offsetY: true, overflow: true }"
+                :menu-props="{ closeOnContentClick: true, lazy: true, offsetOverflow: true, offsetY: true, overflow: true }"
             >
                 <template v-slot:prepend-item>
                     <div class="px-2 py-0">
@@ -21,6 +21,7 @@
                         dense
                         single-line
                         v-model="inputFilterText"
+                        @click.stop.prevent
                     ><v-icon slot="append" >mdi-magnify</v-icon></v-text-field>
                     </div>
                     <v-divider class="my-2"></v-divider>
@@ -75,8 +76,6 @@ export default {
     },
     computed: {
         bookmakersFiltered () {
-            //var bookmakersData = this.$store.state.bookmakersData
-
             if (this.inputFilterText) {
                 const pattern = new RegExp(`\b?${this.inputFilterText}\b?`, 'ig')
                 return this.bookmakersData.filter(thing => thing.name.toLowerCase().match(pattern) )
