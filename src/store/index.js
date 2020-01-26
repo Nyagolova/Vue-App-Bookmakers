@@ -9,12 +9,12 @@ export default new Vuex.Store({
   state: {
     bookmakersData: bookies,
     countriesData: countries,
-    bookmakersFiltration: '',
+    bookmakersChecked: '',
     selectedBookmakers: []
   },
   mutations: {
-    BOOKMAKERS_FILTER (state, payload) {
-      state.bookmakersFiltration = payload
+    CHECK_BOOKMAKERS (state, payload) {
+      state.bookmakersChecked = payload
     },
     FILTER_BOOKMAKERS(state, payload) {
       state.selectedBookmakers = payload

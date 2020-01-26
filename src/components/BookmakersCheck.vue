@@ -8,7 +8,7 @@
 
         <v-col class=" align-self-center" sm="1" >
             <v-card elevation=0 class="justify-center" color="#f1f3f9">
-                <v-checkbox class="ma-0 pa-0" hide-details > </v-checkbox> 
+                <v-checkbox v-model="allChecked" class="ma-0 pa-0" hide-details > </v-checkbox> 
             </v-card>
         </v-col>
 
@@ -24,7 +24,21 @@
 
 <script>
 export default {
-    props: ['checkData', 'rowIndex']
+    data () {
+        return {
+            checkboxStatus: false
+        }
+    },
+    props: ['checkData', 'rowIndex'],
+    computed : {
+        allChecked () {
+            if (this.$store.state.bookmakersChecked === 1) {
+                return true;
+            } else {
+                return this.checkboxStatus
+            }
+        }
+    }
 }
 </script>
 

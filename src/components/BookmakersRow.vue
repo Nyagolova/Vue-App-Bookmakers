@@ -20,7 +20,7 @@
             </v-col>
         </v-row>
 
-        <v-row no-gutters>
+        <!-- <v-row no-gutters>
             <v-col md="3"> </v-col>
             <v-col md="2" >
                 <v-card class="pa-2 pt-0 pb-0" elevation=0 color="#f1f3f9">
@@ -42,20 +42,20 @@
                     <domain-textfield-additional></domain-textfield-additional>
                 </v-card>
             </v-col>
-        </v-row>
+        </v-row> -->
     </v-container>
 </template>
 
 <script>
 import BookmakersCheck from '@/components/BookmakersCheck.vue'
 import DomainTextfield from '@/components/DomainTextfield.vue'
-import DomainTextfieldAdditional from '@/components/DomainTextfieldAdditional.vue'
+// import DomainTextfieldAdditional from '@/components/DomainTextfieldAdditional.vue'
 
 export default {
     components: {
         BookmakersCheck,
         DomainTextfield,
-        DomainTextfieldAdditional
+        // DomainTextfieldAdditional
     },
     props: [
         'itemData',
