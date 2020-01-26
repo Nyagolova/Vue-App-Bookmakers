@@ -26,21 +26,23 @@
                     <v-divider class="my-2"></v-divider>
                     <div class="px-2 py-0">
                         <v-btn text small 
-                            @click="filterAllBookmakers()"
-                        >   Show All
+                            @click="filterAllBookmakers();"
+                        >   
+                            Show All
                         </v-btn>
                     </div>
                     <v-divider class="my-2"></v-divider>
                     <div class="px-2 py-0">
                         <v-btn text small
-                            @click="filterActiveBookmakers()"
+                            @click="filterActiveBookmakers();"
                         >
-                            Show Active</v-btn>
+                            Show Active
+                        </v-btn>
                     </div>
                     <v-divider class="my-2"></v-divider>
                     <div class="px-2 py-0">
                         <v-btn text small
-                            @click="filterInctiveBookmakers()"
+                            @click="filterInctiveBookmakers();"
                         >
                             Show Inactive
                         </v-btn>

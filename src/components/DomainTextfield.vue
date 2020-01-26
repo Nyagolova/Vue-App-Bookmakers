@@ -12,7 +12,8 @@
                 filled
                 solo
                 class="ma-2 mr-0"
-            >
+                v-model="domainLink"
+            >  
             </v-text-field>
         </v-col>
 
@@ -34,7 +35,25 @@
 
 <script>
 export default {
-
+    // data : {
+    //     return () {
+             
+    //     }
+    // },
+    props: ['itemData'],
+    computed : {
+        domainLink () {
+            if (this.itemData.links) {
+                if (this.itemData.links.default) {
+                    return this.itemData.links.default
+                } else {
+                    return ''
+                } 
+            } else {
+                return ''
+            }
+        }
+    }
 }
 </script>
 

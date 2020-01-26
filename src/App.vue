@@ -26,7 +26,7 @@
         <v-col>
           <v-card class="pa-2" elevation="0" color="#f1f3f9">
             <template v-for="(item, index) in this.BookmakersSelected"> 
-              <bookmakers-row :key="item.name" :itemData="item"></bookmakers-row>
+              <bookmakers-row :key="item.name" :itemData="item" :rowIndex="(index+1)"></bookmakers-row>
               <v-divider :key="index"></v-divider>
             </template>
           </v-card>

@@ -3,7 +3,7 @@
         <v-row no-gutters >
             <v-col md="3" >
                 <v-card class="pa-2 pb-0"  elevation=0 color="#f1f3f9">
-                    <bookmakers-check></bookmakers-check>
+                    <bookmakers-check :checkData="itemData" :rowIndex="rowIndex"></bookmakers-check>
                 </v-card>
             </v-col>
 
@@ -15,7 +15,7 @@
             
             <v-col md="7" >
                 <v-card  class="pa-2 pb-0 d-flex align-stretch"  elevation=0 color="#f1f3f9">
-                    <domain-textfield></domain-textfield>
+                    <domain-textfield :itemData="itemData"></domain-textfield>
                 </v-card>
             </v-col>
         </v-row>
@@ -58,7 +58,8 @@ export default {
         DomainTextfieldAdditional
     },
     props: [
-        'itemData'
+        'itemData',
+        'rowIndex'
     ],
     computed : {
         countriesNames () {
