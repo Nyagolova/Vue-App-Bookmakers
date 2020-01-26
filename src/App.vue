@@ -25,8 +25,8 @@
       <v-row no-gutters>
         <v-col>
           <v-card class="pa-2" elevation="0" color="#f1f3f9">
-            <template v-for="(item, index) in this.mydata"> 
-              <bookmakers-row :key="item"></bookmakers-row>
+            <template v-for="(item, index) in this.BookmakersSelected"> 
+              <bookmakers-row :key="item.name" :itemData="item"></bookmakers-row>
               <v-divider :key="index"></v-divider>
             </template>
           </v-card>
@@ -52,10 +52,18 @@ export default {
     OperationalButtons,
     BookmakersRow
   },
-
   data () {
     return {
-      mydata: ['a','b','v','g','d']
+    }
+  },
+  computed : {
+    BookmakersSelected () {
+      if (this.$store.state.selectedBookmakers.length <= 0) {
+        return this.$store.state.bookmakersData
+      } else {
+        return this.$store.state.selectedBookmakers
+      }
+      
     }
   } 
 };

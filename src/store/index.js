@@ -8,9 +8,17 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     bookmakersData: bookies,
-    countriesData: countries
+    countriesData: countries,
+    bookmakersFiltration: '',
+    selectedBookmakers: []
   },
   mutations: {
+    BOOKMAKERS_FILTER (state, payload) {
+      state.bookmakersFiltration = payload
+    },
+    FILTER_BOOKMAKERS(state, payload) {
+      state.selectedBookmakers = payload
+    }
   },
   actions: {
   },

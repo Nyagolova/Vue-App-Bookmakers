@@ -4,7 +4,7 @@
 
             <v-select
                 background-color="white"
-                :items="bookmakersAll"
+                :items="bookmakersFiltered"
                 item-text ="name"
                 item-value = "name"
                 dense
@@ -25,15 +25,25 @@
                     </div>
                     <v-divider class="my-2"></v-divider>
                     <div class="px-2 py-0">
-                        <v-list-item-content>Show All</v-list-item-content>
+                        <v-btn text small 
+                            @click="filterAllBookmakers()"
+                        >   Show All
+                        </v-btn>
                     </div>
                     <v-divider class="my-2"></v-divider>
                     <div class="px-2 py-0">
-                        Show Active
+                        <v-btn text small
+                            @click="filterActiveBookmakers()"
+                        >
+                            Show Active</v-btn>
                     </div>
                     <v-divider class="my-2"></v-divider>
                     <div class="px-2 py-0">
-                        Show Inactive
+                        <v-btn text small
+                            @click="filterInctiveBookmakers()"
+                        >
+                            Show Inactive
+                        </v-btn>
                     </div>
                     <v-divider class="my-2"></v-divider>
                 </template>
@@ -62,7 +72,7 @@ export default {
     
     },
     computed: {
-        bookmakersAll () {
+        bookmakersFiltered () {
             //var bookmakersData = this.$store.state.bookmakersData
 
             if (this.inputFilterText) {
@@ -72,18 +82,32 @@ export default {
                 return this.bookmakersData
             } 
         },
+        bookmakersAll() {
+            return this.$store.state.bookmakersData
+        },
         bookmakersActive () {
-            return this.bookmakersData.filter(thing => thing.active === 1)
+            return this.$store.state.bookmakersData.filter(thing => thing.active === 1)
         },
         bookmakersInactive () {
-            return this.bookmakersData.filter(thing => thing.active === 0)
+            return this.$store.state.bookmakersData.filter(thing => thing.active === 0)
         }
     },
     mounted () {
         this.bookmakersData = this.$store.state.bookmakersData
     },
     methods: {
-    
+        filterActiveBookmakers () {
+            this.bookmakersData = this.bookmakersActive; 
+            this.$store.commit('FILTER_BOOKMAKERS', this.bookmakersActive)
+        },
+        filterInctiveBookmakers () {
+            this.bookmakersData = this.bookmakersInactive; 
+            this.$store.commit('FILTER_BOOKMAKERS', this.bookmakersInactive)
+        },
+        filterAllBookmakers () {
+            this.bookmakersData = this.bookmakersAll; 
+            this.$store.commit('FILTER_BOOKMAKERS', this.bookmakersAll)
+        }
     }
 }
 </script>

@@ -57,6 +57,9 @@ export default {
         DomainTextfield,
         DomainTextfieldAdditional
     },
+    props: [
+        'itemData'
+    ],
     computed : {
         countriesNames () {
             return this.$store.state.countriesData.map(a => a.name);
