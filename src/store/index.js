@@ -7,10 +7,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    bookmakersData: bookies,
+    bookmakersData: JSON.parse(window.localStorage.getItem('newBookmakersData')) || bookies,
     countriesData: countries,
     isAllBookmakersChecked: '',
-    filteredBookmakers: []
+    filteredBookmakers: [],
+    test: ''
   },
   mutations: {
     CHECK_ALL_BOOKMAKERS (state, payload) {
@@ -18,7 +19,23 @@ export default new Vuex.Store({
     },
     FILTER_BOOKMAKERS(state, payload) {
       state.filteredBookmakers = payload
-    }
+    },
+    UPDATE_DEFAULT_DOMAIN(state, payload) {
+      let bookieDataById = state.bookmakersData.filter(obj => {
+        return obj.id === payload.id
+      })
+      bookieDataById[0].links = bookieDataById[0].links || {}
+      bookieDataById[0].links.default = payload.domainLink;
+    },
+    ADD_NEW_DOMAIN(state, payload) {
+      let bookieDataById = state.bookmakersData.filter(obj => {
+        return obj.id === payload.id
+      })
+      let code = payload.countryCode
+      bookieDataById[0].links = bookieDataById[0].links || {}
+      bookieDataById[0].links[code] = bookieDataById[0].links[code] || "";
+      bookieDataById[0].links[code] = payload.domainText
+    },
   },
   actions: {
   },

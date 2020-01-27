@@ -13,6 +13,7 @@
                 solo
                 class="ma-2 mr-0"
                 :value="domainLink"
+                v-model="domainLink"
             >  
             </v-text-field>
         </v-col>
@@ -38,20 +39,30 @@
 export default {
     data () {
         return  {
-            numberOfTextfields: 0
+            numberOfTextfields: 0,
+            newValue : ''
         }
     },
     props: ['itemData'],
     computed : {
-        domainLink () {
-            if (this.itemData.links) {
-                if (this.itemData.links.default) {
-                    return this.itemData.links.default
+        domainLink : {
+            get () {
+                if (this.itemData.links !== undefined) {
+                    if (this.itemData.links.default) {
+                        return this.itemData.links.default
+                    } else {
+                        return ''
+                    } 
                 } else {
                     return ''
-                } 
-            } else {
-                return ''
+                }
+            },
+            set (value) {
+                var newDomainData = {
+                    id: this.itemData.id,
+                    domainLink: value
+                }
+                this.$store.commit('UPDATE_DEFAULT_DOMAIN', newDomainData)
             }
         }
     },

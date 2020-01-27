@@ -10,6 +10,8 @@
               color="light-blue darken-3"
               width=150
               tile depressed  large 
+              :loading = btnloading
+              @click="SaveAllData()"
             >
               Save
             </v-btn> 
@@ -54,6 +56,7 @@ export default {
   },
   data () {
     return {
+      btnloading: false
     }
   },
   computed : {
@@ -63,9 +66,16 @@ export default {
       } else {
         return this.$store.state.filteredBookmakers
       }
-      
     }
-  } 
+  },
+  methods : {
+    SaveAllData () {
+      this.btnloading=true
+      const data = JSON.stringify(this.$store.state.bookmakersData)
+      window.localStorage.setItem('newBookmakersData', data);
+      this.btnloading=false
+    }
+  }
 };
 </script>
 

@@ -24,9 +24,10 @@
             <domain-textfield-additional 
                 v-for="(rule, ruleID) in this.itemLinks"  
                 :key="ruleID"
-                :countryCode=ruleID
-                :domainText=rule
+                :countryCode="ruleID"
+                :domainText="rule"
                 @removeDomainField="removeExistingDomain"
+                :item="currentRowData"
             >
             </domain-textfield-additional>  
 
@@ -35,6 +36,8 @@
         <domain-textfield-additional 
             v-for="index in this.numberOfNewTextfields"  
             :key="index"
+            :item="currentRowData"
+            countryCode = 'BG'
             @removeDomainField="removeTextFiellld"
         >
         </domain-textfield-additional>  
@@ -54,7 +57,8 @@ export default {
         return {
             numberOfNewTextfields: 0,
             itemToDelete: '',
-            avoidItems: ['default']
+            avoidItems: ['default'],
+            currentRowData : this.itemData
         }
     },
     components: {

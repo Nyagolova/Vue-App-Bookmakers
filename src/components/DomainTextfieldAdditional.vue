@@ -33,7 +33,8 @@
                             filled
                             solo
                             class="ma-2 mr-0 mt-0"
-                            :value="this.domainText"
+                            :value="domainLink"
+                            v-model="domainLink"
                         >
                         </v-text-field>
                     </v-col>
@@ -63,13 +64,31 @@
 
 <script>
 export default {
-    props: ['countryCode', 'domainText'],
+    props: ['countryCode', 'domainText', 'item'],
     computed : {
         countriesNames () {
             return this.$store.state.countriesData.map(a => a.name);
         },
         getCountryByCode() {
-            return this.$store.state.countriesData.filter(obj => {return obj.code === this.countryCode}).map(a => a.name)[0]
+            var countryByCode = this.$store.state.countriesData.filter(obj => {return obj.code === this.countryCode}).map(a => a.name)[0]
+            if (countryByCode) {
+                return countryByCode
+            } else {
+                return 'Bulgaria'
+            }
+        },
+        domainLink : {
+            get () {
+                return this.domainText
+            },
+            set (value) {
+                var newDomainData = {
+                    id: this.item.id,
+                    domainText: value,
+                    countryCode: this.countryCode
+                }
+                this.$store.commit('ADD_NEW_DOMAIN', newDomainData)
+            }
         }
     },
     methods: {
