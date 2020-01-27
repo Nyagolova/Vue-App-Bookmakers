@@ -58,17 +58,7 @@ export default {
     methods: {
         addTextfieldd() {
             this.numberOfTextfields += 1
-            var textfieldsData = {
-                                    id: this.itemData.id,
-                                    count: this.numberOfTextfields
-                                }
-            this.$store.commit('SET_ID', this.itemData.id)    
-            this.$store.commit('SET_COUNT', this.numberOfTextfields)
-                                
-            // Vue.set(this.$store.state.additionalTextfields, 'id', '0');
-            // Vue.set(this.$store.state.additionalTextfields, 'count', '0');
-            this.$store.commit('ADD_DOMAIN_DATA', textfieldsData)
-            this.$store.commit('UPDATE_ITEM', this.itemData.id)
+            this.$emit('getNumberOfTextfields', this.numberOfTextfields)
         }
     }
 }

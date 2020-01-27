@@ -22,20 +22,6 @@ export default new Vuex.Store({
     },
     FILTER_BOOKMAKERS(state, payload) {
       state.selectedBookmakers = payload
-    },
-    ADD_DOMAIN_DATA(state, payload) {
-      var id = payload.id;
-      var count = payload.count;
-      state.additionalTextfields[id] = count
-    },
-    SET_COUNT(state, payload) {
-      state.count = payload
-    },
-    SET_ID(state, payload) {
-      state.selectedId = payload
-    },
-    UPDATE_ITEM (state, payload) {
-      state.itemIsUpdated.push(payload)
     }
   },
   actions: {

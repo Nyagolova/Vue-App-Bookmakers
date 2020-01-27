@@ -15,19 +15,17 @@
             
             <v-col md="7" >
                 <v-card  class="pa-2 pb-0 d-flex align-stretch"  elevation=0 color="#f1f3f9">
-                    <domain-textfield :itemData="itemData"></domain-textfield>
+                    <domain-textfield :itemData="itemData" @getNumberOfTextfields="addNewTextfield"></domain-textfield>
                 </v-card>
             </v-col>
         </v-row>
  
-        <template v-if="this.thisItemIsUpdated">
-            <domain-textfield-additional 
-             
-            >
-            <!--    v-for="items in count"  
-                :key="items" -->
-            </domain-textfield-additional>  
-        </template>
+        <domain-textfield-additional 
+            v-for="index in this.numberOfNewTextfields"  
+            :key="index"
+        >
+        </domain-textfield-additional>  
+
  
     </v-container>
 </template>
@@ -40,7 +38,7 @@ import DomainTextfieldAdditional from '@/components/DomainTextfieldAdditional.vu
 export default {
     data () {
         return {
-           
+           numberOfNewTextfields: 0
         }
     },
     components: {
@@ -53,23 +51,10 @@ export default {
         'rowIndex'
     ],
     computed : {
-        mydata () {
-            console.log('here 2')
-            return this.$store.state.additionalTextfields
-        },
-        count () {
-            return this.$store.state.count
-        },
-        id () {
-            return this.$store.state.selectedId
-        },
-        thisItemIsUpdated () {
-            if (this.$store.state.itemIsUpdated.includes(this.itemData.id)) {
-                return this.itemData.id
-            } else {
-                return ''
-            }
-            
+    },
+    methods: {
+        addNewTextfield(value) {
+            this.numberOfNewTextfields = value
         }
     },
     mounted () {
