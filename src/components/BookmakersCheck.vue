@@ -32,7 +32,7 @@ export default {
     props: ['checkData', 'rowIndex'],
     computed : {
         allChecked () {
-            if (this.$store.state.bookmakersChecked === 1) {
+            if (this.$store.state.isAllBookmakersChecked === 1) {
                 return true;
             } else {
                 return this.checkboxStatus;

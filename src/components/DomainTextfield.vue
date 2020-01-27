@@ -12,7 +12,7 @@
                 filled
                 solo
                 class="ma-2 mr-0"
-                v-model="domainLink"
+                :value="domainLink"
             >  
             </v-text-field>
         </v-col>

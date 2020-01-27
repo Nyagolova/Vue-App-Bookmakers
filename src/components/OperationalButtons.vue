@@ -22,10 +22,10 @@
 export default {
     methods : {
         checkAllBookmakers () {
-            this.$store.commit('CHECK_BOOKMAKERS', 1)
+            this.$store.commit('CHECK_ALL_BOOKMAKERS', 1)
         },
         uncheckAllBookmakers () {
-            this.$store.commit('CHECK_BOOKMAKERS', 0)
+            this.$store.commit('CHECK_ALL_BOOKMAKERS', 0)
         }
     }
 }

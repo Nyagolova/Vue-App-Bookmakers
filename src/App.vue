@@ -58,10 +58,10 @@ export default {
   },
   computed : {
     BookmakersSelected () {
-      if (this.$store.state.selectedBookmakers.length <= 0) {
+      if (this.$store.state.filteredBookmakers.length <= 0) {
         return this.$store.state.bookmakersData
       } else {
-        return this.$store.state.selectedBookmakers
+        return this.$store.state.filteredBookmakers
       }
       
     }
