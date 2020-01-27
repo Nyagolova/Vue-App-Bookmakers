@@ -8,7 +8,7 @@
 
         <v-col class=" align-self-center" sm="1" >
             <v-card elevation=0 class="justify-center" color="#f1f3f9">
-                <v-checkbox v-model="allChecked" class="ma-0 pa-0" hide-details > </v-checkbox> 
+                <v-checkbox :value="allChecked" v-model="checkboxStatus" class="ma-0 pa-0" hide-details > </v-checkbox> 
             </v-card>
         </v-col>
 
@@ -35,7 +35,7 @@ export default {
             if (this.$store.state.bookmakersChecked === 1) {
                 return true;
             } else {
-                return this.checkboxStatus
+                return this.checkboxStatus;
             }
         }
     }

@@ -12,6 +12,7 @@
                     hide-details 
                     :menu-props="{offsetOverflow: true, offsetY: true, overflow: true, elevation: 1 }"
                     :items="countriesNames"
+                    :value="getCountryByCode"
                 > 
                 </v-select>
             </v-card>
@@ -32,6 +33,7 @@
                             filled
                             solo
                             class="ma-2 mr-0 mt-0"
+                            :value="this.domainText"
                         >
                         </v-text-field>
                     </v-col>
@@ -45,6 +47,7 @@
                             small 
                             elevation=0 
                             class="ma-2 ml-0 mt-0" 
+                            @click="removeTextfield()"
                         >
                             <v-icon dark>mdi-close</v-icon>
                         </v-btn>
@@ -60,9 +63,18 @@
 
 <script>
 export default {
+    props: ['countryCode', 'domainText'],
     computed : {
         countriesNames () {
             return this.$store.state.countriesData.map(a => a.name);
+        },
+        getCountryByCode() {
+            return this.$store.state.countriesData.filter(obj => {return obj.code === this.countryCode}).map(a => a.name)[0]
+        }
+    },
+    methods: {
+        removeTextfield () {
+            this.$emit('removeDomainField', this.countryCode)
         }
     }
 }

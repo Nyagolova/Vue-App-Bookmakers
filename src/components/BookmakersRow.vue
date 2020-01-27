@@ -15,14 +15,27 @@
             
             <v-col md="7" >
                 <v-card  class="pa-2 pb-0 d-flex align-stretch"  elevation=0 color="#f1f3f9">
-                    <domain-textfield :itemData="itemData" @getNumberOfTextfields="addNewTextfield"></domain-textfield>
+                    <domain-textfield :itemData="itemData" @getNumberOfTextfields="addNewTextfield" ></domain-textfield>
                 </v-card>
             </v-col>
         </v-row>
+
+        <template v-if="this.itemLinks"> 
+            <domain-textfield-additional 
+                v-for="(rule, ruleID) in this.itemLinks"  
+                :key="ruleID"
+                :countryCode=ruleID
+                :domainText=rule
+                @removeDomainField="removeExistingDomain"
+            >
+            </domain-textfield-additional>  
+
+        </template>
  
         <domain-textfield-additional 
             v-for="index in this.numberOfNewTextfields"  
             :key="index"
+            @removeDomainField="removeTextFiellld"
         >
         </domain-textfield-additional>  
 
@@ -35,10 +48,13 @@ import BookmakersCheck from '@/components/BookmakersCheck.vue'
 import DomainTextfield from '@/components/DomainTextfield.vue'
 import DomainTextfieldAdditional from '@/components/DomainTextfieldAdditional.vue'
 
+
 export default {
     data () {
         return {
-           numberOfNewTextfields: 0
+            numberOfNewTextfields: 0,
+            itemToDelete: '',
+            avoidItems: ['default']
         }
     },
     components: {
@@ -51,10 +67,31 @@ export default {
         'rowIndex'
     ],
     computed : {
+        itemLinks () {
+            if (this.itemData.links !== undefined)  {
+                var raw = this.itemData.links;
+                var itemsToDelete = this.avoidItems
+                var filtered = Object.keys(raw)
+                    .filter(key => !itemsToDelete.includes(key))
+                    .reduce((obj, key) => {
+                        obj[key] = raw[key];
+                        return obj;
+                    }, {});
+                return filtered
+            } else {
+                return ''
+            }            
+        } 
     },
     methods: {
         addNewTextfield(value) {
             this.numberOfNewTextfields = value
+        },
+        removeTextFiellld () {
+            this.numberOfNewTextfields--
+        },
+        removeExistingDomain (val) {
+            this.avoidItems.push(val)
         }
     },
     mounted () {
