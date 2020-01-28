@@ -13,6 +13,7 @@
                     :menu-props="{offsetOverflow: true, offsetY: true, overflow: true, elevation: 1 }"
                     :items="countriesNames"
                     :value="getCountryByCode"
+                    v-on:change="selectCountry"
                 > 
                 </v-select>
             </v-card>
@@ -33,8 +34,8 @@
                             filled
                             solo
                             class="ma-2 mr-0 mt-0"
-                            :value="domainLink"
-                            v-model="domainLink"
+                            :value="this.domainText"
+                            v-on:change="changeOrAddDomain"
                         >
                         </v-text-field>
                     </v-col>
@@ -65,6 +66,13 @@
 <script>
 export default {
     props: ['countryCode', 'domainText', 'item'],
+    data () {
+        return  {
+            defaultCountry: 'BG',
+            linkText: '',
+            textfieldIndex: this.$vnode.key
+        }
+    },
     computed : {
         countriesNames () {
             return this.$store.state.countriesData.map(a => a.name);
@@ -77,23 +85,44 @@ export default {
                 return 'Bulgaria'
             }
         },
-        domainLink : {
-            get () {
-                return this.domainText
-            },
-            set (value) {
-                var newDomainData = {
-                    id: this.item.id,
-                    domainText: value,
-                    countryCode: this.countryCode
-                }
-                this.$store.commit('ADD_NEW_DOMAIN', newDomainData)
+        getCodeByCountry () {
+            var codeByCountry = this.$store.state.countriesData.filter(obj => {return obj.name === this.defaultCountry}).map(a => a.code)[0]
+            if (codeByCountry) {
+                return codeByCountry
+            } else {
+                return 'BG'
             }
-        }
+        } 
     },
     methods: {
         removeTextfield () {
             this.$emit('removeDomainField', this.countryCode)
+            var dataForDelete = {
+                id: this.item.id,
+                rowIndex: this.textfieldIndex,
+                countryCode: this.getCodeByCountry
+            }
+            this.$store.commit('REMOVE_DOMAIN_BY_ID', dataForDelete)
+        },
+        selectCountry (code) {
+            this.defaultCountry = code
+            var newDomainData = {
+                rowIndex: this.textfieldIndex,
+                id: this.item.id,
+                code: this.getCodeByCountry,
+                link: this.linkText || this.domainText  
+            }
+            this.$store.commit('UPDATE_BOOKMAKER_NEW_DOMAINS', newDomainData)
+        },
+        changeOrAddDomain (link) {
+            this.linkText = link || this.domainText  
+            var newDomainData = {
+                rowIndex: this.textfieldIndex,
+                id: this.item.id,
+                code: this.getCodeByCountry,
+                link: link
+            }
+            this.$store.commit('UPDATE_BOOKMAKER_NEW_DOMAINS', newDomainData)
         }
     }
 }

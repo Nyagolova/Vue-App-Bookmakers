@@ -3,7 +3,10 @@
         <v-row no-gutters >
             <v-col md="3" >
                 <v-card class="pa-2 pb-0"  elevation=0 color="#f1f3f9">
-                    <bookmakers-check :checkData="itemData" :rowIndex="rowIndex"></bookmakers-check>
+                    <bookmakers-check 
+                        :checkData="itemData" 
+                        :rowIndex="rowIndex"  
+                    ></bookmakers-check>
                 </v-card>
             </v-col>
 
@@ -15,7 +18,10 @@
             
             <v-col md="7" >
                 <v-card  class="pa-2 pb-0 d-flex align-stretch"  elevation=0 color="#f1f3f9">
-                    <domain-textfield :itemData="itemData" @getNumberOfTextfields="addNewTextfield" ></domain-textfield>
+                    <domain-textfield 
+                        :itemData="itemData" 
+                        @getNumberOfTextfields="addNewTextfield" 
+                    ></domain-textfield>
                 </v-card>
             </v-col>
         </v-row>
@@ -58,7 +64,8 @@ export default {
             numberOfNewTextfields: 0,
             itemToDelete: '',
             avoidItems: ['default'],
-            currentRowData : this.itemData
+            currentRowData : this.itemData,
+            isBookmakerChecked: false,
         }
     },
     components: {
@@ -96,7 +103,7 @@ export default {
         },
         removeExistingDomain (val) {
             this.avoidItems.push(val)
-        }
+        } 
     },
     mounted () {
     }

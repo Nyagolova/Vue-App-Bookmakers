@@ -60,9 +60,9 @@ export default {
             set (value) {
                 var newDomainData = {
                     id: this.itemData.id,
-                    domainLink: value
+                    defaultLink: value
                 }
-                this.$store.commit('UPDATE_DEFAULT_DOMAIN', newDomainData)
+                this.$store.commit('UPDATE_BOOKMAKER_DEFAULT_LINK', newDomainData)
             }
         }
     },

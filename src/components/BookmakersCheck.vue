@@ -8,7 +8,7 @@
 
         <v-col class=" align-self-center" sm="1" >
             <v-card elevation=0 class="justify-center" color="#f1f3f9">
-                <v-checkbox :value="allChecked" v-model="checkboxStatus" class="ma-0 pa-0" hide-details > </v-checkbox> 
+                <v-checkbox :value="allChecked" v-model="checkboxStatus" v-on:change="checkBookmaker" class="ma-0 pa-0" hide-details > </v-checkbox> 
             </v-card>
         </v-col>
 
@@ -37,6 +37,14 @@ export default {
             } else {
                 return this.checkboxStatus;
             }
+        }
+    },
+    methods: {
+        checkBookmaker(checkStatus) {
+            var isCheckedByID = { id: this.checkData.id, status: checkStatus || false }
+            var orderInfo = { id: this.checkData.id, order: this.rowIndex}
+            this.$store.commit('UPDATE_BOOKMAKER_ACTIVE_STATUS', isCheckedByID)
+            this.$store.commit('UPDATE_BOOKMAKER_ORDER', orderInfo)
         }
     }
 }

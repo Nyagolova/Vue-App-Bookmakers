@@ -70,10 +70,11 @@ export default {
   },
   methods : {
     SaveAllData () {
-      this.btnloading=true
-      const data = JSON.stringify(this.$store.state.bookmakersData)
-      window.localStorage.setItem('newBookmakersData', data);
-      this.btnloading=false
+      this.btnloading = true
+      
+      this.$store.commit('SAVE_ALL_DATA')
+      
+      this.btnloading = false
     }
   }
 };
